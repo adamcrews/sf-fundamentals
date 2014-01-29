@@ -46,3 +46,4 @@ node default {
   notify { "Hello ${fqdn}": }
 }
 
+
