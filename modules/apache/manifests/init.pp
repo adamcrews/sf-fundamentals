@@ -21,6 +21,7 @@ class apache {
 
   file { '/etc/httpd/conf/httpd.conf':
     ensure  => file,
+    source  => "puppet:///modules/${module_name}/httpd.conf",
     require => Package['httpd'],
   }
 }
