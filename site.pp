@@ -37,6 +37,7 @@ File { backup => 'main' }
 
 node 'adam.puppetlabs.vm' {
   include users
+  include apache
 }
 
 node default {
