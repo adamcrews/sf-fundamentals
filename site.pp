@@ -37,15 +37,16 @@ File { backup => 'main' }
 
 node 'adam.puppetlabs.vm' {
   include users
-  include apache
+  #  include apache
   include hosts
+  include website
 
-  $vhosts = [ 'john.adam.vm', 'june.adam.vm' ]
-  apache::vhost { $vhosts: }
-
-  apache::vhost { 'special.sauce.vm':
-    docroot => '/tmp/special',
-  }
+  #$vhosts = [ 'john.adam.vm', 'june.adam.vm' ]
+  #apache::vhost { $vhosts: }
+  #
+  #apache::vhost { 'special.sauce.vm':
+  #  docroot => '/tmp/special',
+  #}
 
 }
 
