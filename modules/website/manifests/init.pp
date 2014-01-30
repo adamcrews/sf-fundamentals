@@ -17,4 +17,7 @@ class website {
   apache::vhost { 'adam.wp.vm':
     docroot => '/var/www/wordpress',
   }
+
+  Class['apache'] -> Class['wordpress']
+
 }
