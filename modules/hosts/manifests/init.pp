@@ -1,13 +1,13 @@
 class hosts {
 
-  host { $::fqdn:
-    ensure       => 'present',
+  @@host { $::fqdn:
+    ensure       => present,
     host_aliases => [$::hostname],
     ip           => $::ipaddress,
   }
 
   host { 'localhost.localdomain':
-    ensure       => 'present',
+    ensure       => present,
     host_aliases => ['localhost4', 'localhost4.localdomain4', 'localhost'],
     ip           => '127.0.0.1',
   }
@@ -19,10 +19,12 @@ class hosts {
   }
 
   host { 'master.puppetlabs.vm':
-    ensure       => 'present',
+    ensure       => present,
     host_aliases => ['master', 'puppet.puppetlabs.vm', 'puppet'],
     ip           => '10.0.1.3',
   }
+
+  Host <<||>>
 
   resources { 'host': 
     purge => true,

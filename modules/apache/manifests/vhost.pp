@@ -19,6 +19,7 @@ define apache::vhost (
     group   => $root_group,
     content => template("${module_name}/vhost.conf.erb"),
     require => Package[$apache::httpd_pkg],
+    notify  => Service[$apache::httpd_svc],
   }
 
   if (! defined(File[$docroot])) {
