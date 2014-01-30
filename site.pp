@@ -49,7 +49,7 @@ node 'adam.puppetlabs.vm' {
 
 }
 
-node 'evil.puppetlabs.vm' {
+node 'win-g15hj9vjbp0' {
   include apache
   apache::vhost { "i.love.win": }
 }
