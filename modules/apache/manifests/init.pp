@@ -96,6 +96,15 @@ class apache {
     require => Package[$httpd_pkg],
   }
 
+  package { 'php':
+    ensure => present,
+  }
+
+  file { "${httpd_conf_d}/php.conf":
+    ensure  => file,
+    require => Package['php'],
+  }
+
   service { $httpd_svc:
     ensure    => running,
     enable    => true,
