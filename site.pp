@@ -40,6 +40,10 @@ node 'adam.puppetlabs.vm' {
   include apache
 }
 
+node 'ubuntu.puppetlabs.vm' {
+  include apache
+}
+
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
