@@ -58,9 +58,11 @@ class apache {
     mode  => $httpd_mode,
   }
 
-  package { $httpd_pkg:
-    ensure => present,
-  }
+  include apache::package
+
+  #package { $httpd_pkg:
+  #  ensure => present,
+  #}
 
   file { $httpd_webroot:
     ensure  => directory,
