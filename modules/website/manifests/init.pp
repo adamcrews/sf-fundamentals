@@ -12,12 +12,12 @@ class website {
 
   class { 'wordpress':
     install_dir => '/var/www/wordpress',
+    require     => Apache::Vhost['adam.wp.vm'],
   }
 
   apache::vhost { 'adam.wp.vm':
     docroot => '/var/www/wordpress',
   }
 
-  Class['apache'] -> Class['wordpress']
 
 }
