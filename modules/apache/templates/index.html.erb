@@ -1,0 +1,14 @@
+<HTML><HEAD><TITLE>Hello from <%= @fqdn %></TITLE></HEAD>
+  <BODY>
+    <H1>This is the machine <%= @hostname %>
+      <OL>
+        <% @interfaces.split(',').each do |inif| -%>
+        <LI>Interface: <%= inif %>
+        <% end -%>
+      </OL>
+      Uptime: <%= @uptime %><BR>
+      <% if @last_puppet_run -%>
+      Last Puppet Run: <%= @last_puppet_run %><BR>
+      <% end -%>
+  </BODY>
+</HTML>
