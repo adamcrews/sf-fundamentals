@@ -13,7 +13,7 @@ class apache {
       $httpd_conf_d  = '/etc/httpd/conf.d'
       $httpd_mode    = '0644'
       $httpd_base    = '/var/www'
-      $httpd_webroot = "${httpd_base}/httpd"
+      $httpd_webroot = "${httpd_base}/html"
     }
 
     'debian': {
@@ -90,6 +90,7 @@ class apache {
         "puppet:///modules/${module_name}/${httpd_conf}.${::osfamily}",
         "puppet:///modules/${module_name}/${httpd_conf}",
       ],
+    alias   => 'httpd_config_file',
     require => Package[$httpd_pkg],
   }
 
