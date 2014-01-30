@@ -6,9 +6,9 @@
         <LI>Interface: <%= inif %>
         <% end -%>
       </OL>
-      Uptime: <%= @uptime %><BR>
-      <% if @last_puppet_time -%>
-        Last Puppet Time: <%= @last_puppet_time %><BR>
-      <% end -%>
+      <DL>
+        <dt>Uptime: </dt><dd><%= @uptime %></dd>
+        <% if @last_puppet_time -%><dt>Last Puppet Time: </dt><dd><%= @last_puppet_time %></dd><% end -%>
+      </dl>
   </BODY>
 </HTML>
