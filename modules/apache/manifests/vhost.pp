@@ -21,7 +21,7 @@ define apache::vhost (
     require => Package[$apache::httpd_pkg],
   }
 
-  if (! defines(File[$docroot])) {
+  if (! defined(File[$docroot])) {
     file { $docroot:
       ensure  => directory,
       owner   => $httpd_user,

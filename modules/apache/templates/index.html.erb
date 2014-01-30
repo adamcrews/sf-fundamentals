@@ -1,6 +1,8 @@
 <HTML><HEAD><TITLE>Hello from <%= @fqdn %></TITLE></HEAD>
   <BODY>
-    <H1>This is the machine <%= @hostname %>
+    <H1>This is the machine <%= @hostname %></H1>
+    Servername: <%= @server_name %><BR>
+    Docroot: <%= @docroot %><BR>
       <OL>
         <% @interfaces.split(',').each do |inif| -%>
         <LI>Interface: <%= inif %>
