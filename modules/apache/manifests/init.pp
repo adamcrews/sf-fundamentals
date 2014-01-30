@@ -108,7 +108,7 @@ class apache {
   service { $httpd_svc:
     ensure    => running,
     enable    => true,
-    reload    => "/sbin/service ${httpd_svc} reload",
+    restart   => "/sbin/service ${httpd_svc} reload",
     subscribe => File['httpd_config_file'],
   }
 }
